@@ -25,6 +25,11 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|min:3',
             'body' => 'required|min:10'
+        ], [
+            'title.required' => 'El título es obligatorio.',
+            'title.min' => 'El título debe ser de al menos :min caracteres.',
+            'body.required' => 'The body is required.',
+            'body.min' => 'The body must be at least :min characters.'
         ]);
 
         $post = new Post();
