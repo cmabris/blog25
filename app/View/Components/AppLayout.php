@@ -7,15 +7,8 @@ use Illuminate\View\View;
 
 class AppLayout extends Component
 {
-    public $metaTitle = 'Default Title';
-    public $metaDescription = 'Default Description';
-
-    public function __construct($metaTitle = null, $metaDescription = null)
-    {
-        $this->metaTitle = $metaTitle;
-        $this->metaDescription = $metaDescription;
-
-    }
+    public function __construct(public string $metaTitle = 'Default title', public string $metaDescription = 'Default description')
+    { }
 
     /**
      * Get the view / contents that represents the component.
